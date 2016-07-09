@@ -32,7 +32,6 @@ def sandbox():
                 #Here we decode the HTML-data that was sent via POST. We will insert this in the response body.
                 response += base64.b64decode(request.form['payload'].encode('utf-8'))
                 response += str('\n</body>\n</html>')
-                sleep(1)
         return response, 200, all
 
 @app.route('/examples/', methods = ['GET'])
