@@ -62,7 +62,7 @@ function add() {
         x.setAttribute("name", name);
         x.setAttribute("value", value);
         x.setAttribute("class", "form-control 2");
-        document.getElementById("form-group").innerHTML += '<div class="frm"> <div class="form-group"> <label for="name" class="col-lg-4">' + encodeURI(name) + ':</label> <div class="col-lg-8" id="a">';
+        document.getElementById("form-group").innerHTML += '<div class="frm"> <div class="form-group"> <label for="name" class="col-lg-4">' + name + ':</label> <div class="col-lg-8" id="a">';
         document.getElementById("a").id = name;
         lal = document.getElementById(name);
         lal.appendChild(x);
