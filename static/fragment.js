@@ -55,7 +55,7 @@ function add() {
     if (document.getElementById("add").value !== "") {
         name = document.getElementById("add").value
         name = name.split(':')[0]; //We split the header by using ":" as delimiter.
-        value = encodeURI(document.getElementById("add").value.split(':')[1]);
+        value = document.getElementById("add").value.split(':')[1];
 
         var x = document.createElement("input");
         x.setAttribute("type", "text");
