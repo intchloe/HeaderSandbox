@@ -24,7 +24,7 @@ function gethash() {
                 var x = document.createElement("input");
                 x.setAttribute("type", "text");
                 x.setAttribute("name", name);
-                x.setAttribute("value", value);
+                x.setAttribute("value", decodeURI(value));
                 x.setAttribute("class", "form-control 2");
                 document.getElementById("form-group").innerHTML += '<div class="frm"> <div class="form-group"> <label for="name" class="col-lg-4">' + encodeURI(name) + ':</label> <div class="col-lg-8" id="a">';
                 document.getElementById("a").id = name;
@@ -72,7 +72,7 @@ function bas64stuff() {
     l = document.getElementsByClassName("form-control 2").length
     location.hash = "";
     for (i = 0; i < l; i++) {
-        location.hash += '&' + document.getElementsByClassName("form-control 2")[i].name + '=' + document.getElementsByClassName("form-control 2")[i].value
+        location.hash += '&' + encodeURIComponent(document.getElementsByClassName("form-control 2")[i].name) + '=' + encodeURI(document.getElementsByClassName("form-control 2")[i].value)
     }
     html = document.getElementById("2").value
     location.hash += '&html=' + window.btoa(unescape(encodeURIComponent(html)));
