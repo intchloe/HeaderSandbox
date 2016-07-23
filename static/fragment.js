@@ -41,7 +41,6 @@ function b64DecodeUnicode(str) {
         return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
     }).join(''));
 }
-document.getElementById("linkadd").addEventListener("click", add);
 
 function b64EncodeUnicode(str) {
     return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
@@ -51,30 +50,24 @@ function b64EncodeUnicode(str) {
 
 function add() {
 
-    //Here we will see if the user entered text into the "add" input. If not, then check via fragment argument
     if (document.getElementById("add").value !== "") {
-        name = document.getElementById("add").value
-        name = name.split(':')[0]; //We split the header by using ":" as delimiter.
-        value = document.getElementById("add").value.split(':')[1];
-
+        name = document.getElementById("add").value.split(':')[0];
+        value = document.getElementById("add").value.slice(name.length+1);
         var x = document.createElement("input");
         x.setAttribute("type", "text");
         x.setAttribute("name", name);
         x.setAttribute("value", value);
         x.setAttribute("class", "form-control 2");
-        document.getElementById("form-group").innerHTML += '<div class="frm"> <div class="form-group"> <label for="name" class="col-lg-4">' + name + ':</label> <div class="col-lg-8" id="a">';
+        document.getElementById("form-group").innerHTML += '<div class="frm"> <div class="form-group"> <label for="name" class="col-lg-4">' + encodeURI(name) + ':</label> <div class="col-lg-8" id="a">';
         document.getElementById("a").id = name;
         lal = document.getElementById(name);
         lal.appendChild(x);
-
         document.getElementById("form-group").innerHTML += '</div></div></div>';
         document.getElementById("add").value = "";
     }
 }
 
-
 document.getElementById("1337").addEventListener("submit", bas64stuff);
-
 function bas64stuff() {
     l = document.getElementsByClassName("form-control 2").length
     location.hash = "";
