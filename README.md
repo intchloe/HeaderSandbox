@@ -1,7 +1,7 @@
 # HeaderSandbox
 Play with HTTP-headers! Can be very useful when learning about new security headers, finding bypasses, see how different browsers behave and much more! 
 
-Demo: [https://headersandbox.herokuapp.com/](https://headersandbox.herokuapp.com/)
+Demo: [http://headersandbox.com/](http://headersandbox.com/)
 
 ##TODO
 - [ ] Add option to POST to HTTPS (from HTTP or HTTPS) - useful when playing with HTTP -> HTTPS requests
