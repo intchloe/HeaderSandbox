@@ -78,9 +78,3 @@ function bas64stuff() {
     location.hash += '&html=' + window.btoa(unescape(encodeURIComponent(html)));
     document.getElementById("2").value = b64EncodeUnicode(document.getElementById("2").value);
 }
-
-document.getElementById("shorturl").addEventListener("click", shorturl);
-
-function shorturl() {
-    window.location.href = 'https://v.gd/create.php?url=' + encodeURIComponent(document.URL);
-}
